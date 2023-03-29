@@ -20,7 +20,11 @@ async function logAndroid() {
   const emitter = logkitty({
     platform: 'android',
     priority: AndroidPriority.VERBOSE,
-    filter: makeTagsFilter('ReactNative', 'ReactNativeJS'),
+    filter: makeTagsFilter(
+      'ReactNative',
+      'ReactNativeJS',
+      'unknown:ReactNative',
+    ),
   });
 
   emitter.on('entry', (entry) => {
