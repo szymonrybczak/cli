@@ -17,7 +17,7 @@ import {
 import {Config} from '@react-native-community/cli-types';
 
 import loadMetroConfig from '../../tools/loadMetroConfig';
-import {version} from '@react-native-community/cli-tools';
+import {link, version} from '@react-native-community/cli-tools';
 import enableWatchMode from './watchMode';
 
 export type Args = {
@@ -40,6 +40,8 @@ export type Args = {
 };
 
 async function runServer(_argv: Array<string>, ctx: Config, args: Args) {
+  link.setPlatform('none');
+
   let reportEvent: ((event: any) => void) | undefined;
   const terminal = new Terminal(process.stdout);
   const ReporterImpl = getReporterImpl(args.customLogReporterPath);

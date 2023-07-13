@@ -6,7 +6,7 @@
  */
 
 import getEnvironmentInfo from '../tools/envinfo';
-import {logger, version} from '@react-native-community/cli-tools';
+import {link, logger, version} from '@react-native-community/cli-tools';
 import {Config} from '@react-native-community/cli-types';
 import {readFile} from 'fs-extra';
 import path from 'path';
@@ -23,6 +23,8 @@ interface Platforms {
 }
 
 const info = async function getInfo(_argv: Array<string>, ctx: Config) {
+  link.setPlatform('none');
+
   try {
     logger.info('Fetching system and libraries information...');
 
