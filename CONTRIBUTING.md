@@ -16,6 +16,7 @@ All work on React Native CLI happens directly on GitHub. Contributors send pull 
 > Please make sure the version of React Native matches the one present in devDependencies of the CLI. Otherwise, you may get unexpected errors.
 
 _Note: you must use the `--watchFolders` flag with the `start` command when testing the CLI with `yarn link` like this. Otherwise Metro can't find the symlinked folder and this may result in errors such as `ReferenceError: SHA-1 for file ... is not computed`. If you are experiencing this error while using Release configuration, please add `watchFolders: ["path/to/cloned/cli/"]` to your `metro.config.js` file._
+
 ### Setup
 
 Because of a modular design of the CLI, we recommend developing using symbolic links to its packages. This way you can use it seamlessly in the tested project, as you'd use the locally installed CLI. Here's what you need to run in the terminal:
@@ -31,7 +32,7 @@ And then:
 
 ```sh
 cd /my/new/react-native/project/
-yarn link "@react-native-community/cli-platform-ios" "@react-native-community/cli-platform-android" "@react-native-community/cli" "@react-native-community/cli-server-api" "@react-native-community/cli-types" "@react-native-community/cli-tools" "@react-native-community/cli-debugger-ui" "@react-native-community/cli-hermes" "@react-native-community/cli-plugin-metro" "@react-native-community/cli-clean" "@react-native-community/cli-doctor" "@react-native-community/cli-config"
+yarn link "@react-native-community/cli-platform-ios" "@react-native-community/cli-platform-android" "@react-native-community/cli" "@react-native-community/cli-server-api" "@react-native-community/cli-types" "@react-native-community/cli-tools" "@react-native-community/cli-debugger-ui" "@react-native-community/cli-plugin-metro" "@react-native-community/cli-clean" "@react-native-community/cli-doctor" "@react-native-community/cli-config"
 ```
 
 Once you're done with testing and you'd like to get back to regular setup, run `yarn unlink` instead of `yarn link` from above command. Then `yarn install --force`.
